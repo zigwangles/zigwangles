@@ -1,69 +1,81 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #1c1c1c;
-  color: #ffffff;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    display: flex;
 }
 
-header {
-  background-color: #2a2a2a;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.sidebar {
+    width: 50px;
+    background-color: #4169e1;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    transition: width 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.logo h1 {
-  margin: 0;
-  font-size: 24px;
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>');
+    background-size: cover;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+    display: none;
 }
 
-nav ul li {
-  position: relative;
-  margin-right: 20px;
+.sidebar.expanded .sidebar-menu {
+    display: block;
 }
 
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 10px;
-  transition: background-color 0.3s;
+.sidebar.expanded {
+    width: 200px;
 }
 
-nav ul li a:hover {
-  background-color: #007bff;
+.sidebar-menu li {
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
 }
 
-.dropdown {
-  display: none;
-  position: absolute;
-  background-color: #2a2a2a;
-  padding: 10px;
-  border-radius: 5px;
-  top: 100%;
-  left: 0;
+.sidebar-menu li:hover {
+    background-color: #1e90ff;
 }
 
-nav ul li:hover .dropdown {
-  display: block;
+.content {
+    margin-left: 50px;
+    padding: 20px;
+    width: calc(100% - 50px);
+    transition: margin-left 0.3s;
 }
 
-main {
-  padding: 20px;
+.sidebar.expanded + .content {
+    margin-left: 200px;
 }
 
-footer {
-  background-color: #2a2a2a;
-  text-align: center;
-  padding: 10px 0;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+.page {
+    display: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.active-page {
+    display: block;
+}
