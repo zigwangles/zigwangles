@@ -2,35 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Useful Links</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Projects Website</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Useful Links</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Categories</a>
-                    <ul class="dropdown">
-                        <li><a href="games.html">Games</a></li>
-                        <li><a href="streaming.html">Streaming</a></li>
-                        <li><a href="sideloading.html">Sideloading</a></li>
-                        <li><a href="tutorials.html">Tutorials</a></li>
-                        <li><a href="contact.html">Contact Me</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Welcome to Useful Links</h2>
-        <p>Explore various resources and links categorized for your convenience.</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 Your Name</p>
-    </footer>
-    <script src="script.js"></script>
+    <div class="sidebar">
+        <div class="menu-icon" onclick="toggleSidebar()"></div>
+        <ul class="sidebar-menu">
+            <li onclick="showPage('home')">Home</li>
+            <li onclick="showPage('games')">Games</li>
+            <li onclick="showPage('streaming')">Streaming</li>
+            <li onclick="showPage('sideloading')">Sideloading</li>
+            <li onclick="showPage('tutorials')">Tutorials</li>
+            <li onclick="showPage('contact')">Contact Me</li>
+            <li onclick="showPage('projects')">Other Projects</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div id="home" class="page active-page">
+            <h1>Welcome to My Website</h1>
+            <p>Click the menu icon to open the sidebar!</p>
+        </div>
+
+        <div id="games" class="page">
+            <h1>Games</h1>
+            <p>Information about my gaming projects and interests.</p>
+        </div>
+
+        <div id="streaming" class="page">
+            <h1>Streaming</h1>
+            <p>Details about my streaming activities and platforms.</p>
+        </div>
+
+        <div id="sideloading" class="page">
+            <h1>Sideloading</h1>
+            <p>Resources and guides for sideloading applications.</p>
+        </div>
+
+        <div id="tutorials" class="page">
+            <h1>Tutorials</h1>
+            <p>Step-by-step guides and learning resources.</p>
+        </div>
+
+        <div id="contact" class="page">
+            <h1>Contact Me</h1>
+            <p>Ways to get in touch with me.</p>
+        </div>
+
+        <div id="projects" class="page">
+            <h1>Other Projects</h1>
+            <p>A showcase of my additional projects.</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
